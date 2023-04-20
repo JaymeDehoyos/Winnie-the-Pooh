@@ -1,0 +1,271 @@
+:root {
+  --pooh: #ffd400;
+  --shirt: #ff0000;
+}
+
+
+body {
+  display: flex;
+  background-image: linear-gradient(236deg, #f1ae32f8, #ff641d);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.h1 {
+  position: center;
+  justify-content: center;
+}
+
+.pooh {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+}
+.ears {
+  position: relative;
+  left: -4px;
+  z-index: 1;
+}
+
+.ear {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--pooh);
+  
+  &.right {
+    right: 10px;
+  }
+  &.left {
+    left: 10px;
+  }
+}
+
+.head {
+  position: relative;
+  top: 10px;
+  z-index: 1;
+}
+
+.face-cone {
+  position: absolute;
+  left: 16px;
+  background: var(--pooh);
+  width: 60px;
+  height: 10px;
+  border-radius: 30px 30px 0 0;
+}
+
+.face-trap {
+  position: absolute;
+  top: 10px;
+  left: 1px;
+	border-bottom: 40px solid var(--pooh);
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	height: 0;
+	width: 60px;
+}
+
+.face-oval {
+  position: absolute;
+  top: 18px;
+  left: 1px;
+  width: 90px;
+  height: 60px;
+  border-radius: 50% / 60% 60% 40% 40%;
+  background: var(--pooh);
+}
+
+.face {
+  position: relative;
+  z-index: 10;
+}
+
+.eyebrows {
+  position: relative;
+  top: 12px;
+  animation: move-eyebrows 5s infinite;
+}
+
+.eyebrow {
+  position: absolute;
+  width: 10px;
+  border: 3px solid;
+  border-color: black transparent transparent transparent;
+  border-radius: 50%;
+  
+  &.right {
+    right: 25px;
+    transform: rotate(10deg);
+  }
+  
+  &.left {
+    top: 2px;
+    left: 18px;
+    transform: rotate(-10deg);
+  }
+}
+
+.eyes {
+  position: relative;
+  top: 40px;
+  animation: look-around 5s infinite;
+}
+
+.eye {
+  position: absolute;
+  width: 6px;
+  height: 7px;
+  background-color: black;
+  border-radius: 50%;
+  
+  &.right {
+    right: 28px;
+  }
+  
+  &.left {
+   left: 25px;
+  }
+}
+
+.nose {
+  position: relative;
+  top: 50px;
+  left: 42px;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 20% 20% 50% 50%;
+}
+
+.hands {
+  position: relative;
+  top: 80px;
+}
+
+.hand {
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  border-radius: 0 0 20px 20px;
+  background: var(--pooh);
+  
+  &.right {
+    transform: rotate(-45deg);
+    right: -2px;
+  }
+  
+  &.left {
+    transform: rotate(45deg);
+    left: -7px
+  }
+}
+
+.shirt {
+  position: relative;
+  top: 75px;
+  left: 3px;
+}
+
+.shirt-center {
+  width: 55px;
+  height: 0;
+  border-bottom: 35px solid var(--shirt);
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+.shirt-sleeve {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-color: var(--shirt);
+  
+  &.right {
+    right: 10px;
+    transform: rotate(45deg);
+  }
+  &.left {
+    left: -2px;
+    transform: rotate(-45deg);
+  }
+}
+
+.body {
+  position: relative;
+  left: 5px;
+  top: 73px;
+  width: 81px;
+  height: 55px;
+  border-radius: 0 0 80px 80px;
+  background: var(--pooh);
+}
+
+.legs {
+  position: relative;
+  top: 40px;
+}
+
+.leg {
+  position: absolute;
+  width: 21px;
+  height: 60px;
+  background: var(--pooh);
+  border-radius: 0 0 30px 30px;
+  
+  &.right {
+    right: 20px;
+  }
+  
+  &.left {
+    left: 12px;
+  }
+}
+
+.feet {
+  position: relative;
+  top: 90px;
+}
+
+.foot {
+  position: absolute;
+  width: 32px;
+  height: 15px;
+  background: var(--pooh);
+  
+  &.right {
+    right: 20px;
+    border-radius: 30px 5px;
+  }
+  &.left {
+    left: 12px;
+    border-radius: 5px 30px;
+  }
+}
+
+@keyframes look-around {
+  10%, 40%, 80% {
+    top: 25px;
+  }
+  20%, 60% {
+    top: 35px;
+  }
+  0%, 100% {
+    top: 40px;
+  }
+}
+
+@keyframes move-eyebrows {
+  10%, 40%, 80% {
+    top: 10px;
+  }
+  20%, 60% {
+    top: 14px;
+  }
+  0%, 100% {
+    top: 12px;
+  }
+}
